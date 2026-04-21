@@ -1,0 +1,680 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- HERO — ORIGINAL, UNCHANGED -->
+<section class="hero" id="home">
+  <div class="hero-slider" id="heroSlider">
+    <div class="hero-slide active">
+      <img src="https://images.pexels.com/photos/7764191/pexels-photo-7764191.jpeg" alt="India Travel Journey" loading="eager">
+    </div>
+    <div class="hero-slide">
+      <img src="https://images.pexels.com/photos/5374231/pexels-photo-5374231.jpeg" alt="Indian Destinations" loading="eager">
+    </div>
+    <div class="hero-slide">
+      <img src="https://images.pexels.com/photos/32262460/pexels-photo-32262460.jpeg" alt="India Tour Package" loading="eager">
+    </div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🇮🇳 Complete Indian Destination Planner</div>
+    <h1 class="hero-title">Find Your<br>Perfect <span>Journey</span></h1>
+    <p class="hero-hindi">हर सफर एक नई कहानी — ज़ारा टूर के साथ</p>
+    <p class="hero-sub">Handcrafted tours across the most breathtaking destinations in India.<br>Unplug, explore, and create memories that last forever.</p>
+    <div class="hero-pills">
+      <div class="pill"><span class="dot"></span> Solo Tours</div>
+      <div class="pill"><span class="dot"></span> Family Tours</div>
+      <div class="pill"><span class="dot"></span> Couple Tours</div>
+      <div class="pill"><span class="dot"></span> Group Tours</div>
+    </div>
+    <div class="hero-btns">
+      <a href="#packages" class="btn-primary">Explore Packages</a>
+      <a href="#contact" class="btn-outline">Plan My Trip</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- BOOKING BAR -->
+<div class="booking-bar">
+  <div class="booking-inner">
+    <div class="booking-field">
+      <div class="field-label">Destination</div>
+      <div class="field-value">
+        <span class="field-icon">📍</span> 
+        <select id="book-dest" class="booking-select">
+          <option value="Kashmir">Kashmir</option>
+          <option value="Ladakh">Ladakh</option>
+          <option value="Shimla Manali">Shimla Manali</option>
+          <option value="Kerala">Kerala</option>
+          <option value="Goa">Goa</option>
+          <option value="Darjeeling">Darjeeling</option>
+          <option value="Rajasthan">Rajasthan</option>
+        </select>
+      </div>
+    </div>
+    <div class="booking-field">
+      <div class="field-label">Tour Type</div>
+      <div class="field-value">
+        <span class="field-icon">👥</span>
+        <select id="book-type" class="booking-select">
+          <option value="Group Tour">Group Tour</option>
+          <option value="Couple Tour">Couple Tour</option>
+          <option value="Family Tour">Family Tour</option>
+          <option value="Solo Trip">Solo Trip</option>
+        </select>
+      </div>
+    </div>
+    <div class="booking-field">
+      <div class="field-label">Duration</div>
+      <div class="field-value">
+        <span class="field-icon">🗓</span>
+        <select id="book-dur" class="booking-select">
+          <option value="3 Nights / 4 Days">3N / 4D</option>
+          <option value="4 Nights / 5 Days" selected>4N / 5D</option>
+          <option value="5 Nights / 6 Days">5N / 6D</option>
+          <option value="6 Nights / 7 Days">6N / 7D</option>
+        </select>
+      </div>
+    </div>
+    <div class="booking-field">
+      <div class="field-label">Guests</div>
+      <div class="field-value">
+        <span class="field-icon">🧑‍🤝‍🧑</span>
+        <select id="book-guests" class="booking-select">
+          <option value="2 Adults">2 Adults</option>
+          <option value="4 Adults">4 Adults</option>
+          <option value="6 Adults" selected>6 Adults</option>
+          <option value="8+ Adults">8+ Adults</option>
+        </select>
+      </div>
+    </div>
+    <button class="book-btn" onclick="sendBooking()">Book Your Stay</button>
+  </div>
+</div>
+
+<script>
+function sendBooking() {
+  const dest = document.getElementById('book-dest').value;
+  const type = document.getElementById('book-type').value;
+  const dur = document.getElementById('book-dur').value;
+  const guests = document.getElementById('book-guests').value;
+  const message = `Hi Zara Tours! I'm interested in booking a stay.\n\n*Destination:* ${dest}\n*Tour Type:* ${type}\n*Duration:* ${dur}\n*Guests:* ${guests}\n\nPlease share the details!`;
+  window.open(`https://wa.me/919982965965?text=${encodeURIComponent(message)}`, '_blank');
+}
+</script>
+
+<!-- DESTINATIONS -->
+<section id="destinations">
+  <div class="centered">
+    <div class="section-label reveal">Our Destinations</div>
+    <h2 class="section-title reveal reveal-delay-1">Explore<br>India's Wonders</h2>
+    <p class="section-sub reveal reveal-delay-2">From snow-capped Himalayan peaks to tropical Kerala backwaters — we cover every corner of Incredible India.</p>
+  </div>
+  <div class="destinations-grid">
+    <div class="dest-card tall reveal">
+      <img src="{{ url_for('static', filename='images/gallery/kashmir ladakh/1.jpg') }}" alt="Kashmir" loading="lazy">
+      <div class="dest-overlay">
+        <div class="dest-tag">North India · Heaven on Earth</div>
+        <div class="dest-name">Kashmir</div>
+      </div>
+    </div>
+    <div class="dest-card reveal reveal-delay-1">
+      <img src="{{ url_for('static', filename='images/gallery/kashmir ladakh/2.jpg') }}" alt="Ladakh" loading="lazy">
+      <div class="dest-overlay">
+        <div class="dest-tag">North India</div>
+        <div class="dest-name">Ladakh</div>
+        <a href="#packages" class="dest-link">Explore →</a>
+      </div>
+    </div>
+    <div class="dest-card reveal reveal-delay-2">
+      <img src="{{ url_for('static', filename='images/gallery/shimla manali/1.jpeg') }}" alt="Shimla Manali" loading="lazy">
+      <div class="dest-overlay">
+        <div class="dest-tag">Himachal Pradesh</div>
+        <div class="dest-name">Shimla · Manali</div>
+        <a href="#packages" class="dest-link">Explore →</a>
+      </div>
+    </div>
+    <div class="dest-card reveal reveal-delay-1">
+      <img src="{{ url_for('static', filename='images/gallery/kerala/1.jpg') }}" alt="Kerala" loading="lazy">
+      <div class="dest-overlay">
+        <div class="dest-tag">South India</div>
+        <div class="dest-name">Kerala</div>
+        <a href="#packages" class="dest-link">Explore →</a>
+      </div>
+    </div>
+    <div class="dest-card reveal reveal-delay-2">
+      <img src="{{ url_for('static', filename='images/gallery/gao/1.jpg') }}" alt="Goa" loading="lazy">
+      <div class="dest-overlay">
+        <div class="dest-tag">West India</div>
+        <div class="dest-name">Goa</div>
+        <a href="#packages" class="dest-link">Explore →</a>
+      </div>
+    </div>
+    <div class="dest-card reveal reveal-delay-3">
+      <img src="{{ url_for('static', filename='images/gallery/darjeeling/1.jpg') }}" alt="Darjeeling" loading="lazy">
+      <div class="dest-overlay">
+        <div class="dest-tag">East India</div>
+        <div class="dest-name">Darjeeling</div>
+        <a href="#packages" class="dest-link">Explore →</a>
+      </div>
+    </div>
+    <div class="dest-card reveal reveal-delay-2">
+      <img src="{{ url_for('static', filename='images/gallery/rajasthan/1.jpg') }}" alt="Rajasthan" loading="lazy">
+      <div class="dest-overlay">
+        <div class="dest-tag">West India</div>
+        <div class="dest-name">Rajasthan</div>
+        <a href="#packages" class="dest-link">Explore →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages" class="packages-bg">
+  <div class="centered">
+    <div class="section-label reveal">Tour Packages</div>
+    <h2 class="section-title reveal reveal-delay-1">Special Offers &<br>Best Deals</h2>
+    <p class="section-sub reveal reveal-delay-2">Carefully curated packages for every kind of traveller — all-inclusive, transparent pricing, no hidden costs.</p>
+  </div>
+  <div class="packages-grid">
+
+    <div class="pkg-card featured reveal">
+      <div class="pkg-badge">Best Seller</div>
+      <div class="pkg-img">
+        <img src="{{ url_for('static', filename='images/gallery/kashmir ladakh/3.jpg') }}" alt="Kashmir Group Tour" loading="lazy">
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-type">Group Tour · 12 Adults</div>
+        <div class="pkg-name">4 Night 5 Day Kashmir Group Tour</div>
+        <div class="pkg-details">
+          <span class="pkg-detail">Srinagar to Srinagar</span>
+          <span class="pkg-detail">Hotel Included</span>
+          <span class="pkg-detail">Transport</span>
+        </div>
+        <div class="pkg-price-row">
+          <div class="pkg-price">
+            <span class="price-old">₹10,500</span>
+            <span class="price-new">₹7,999 <span class="price-pp">/pp</span></span>
+          </div>
+          <a href="#contact" class="pkg-book">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pkg-card reveal reveal-delay-1">
+      <div class="pkg-img">
+        <img src="{{ url_for('static', filename='images/gallery/kashmir ladakh/4.jpg') }}" alt="Kashmir 6 Day" loading="lazy">
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-type">Group Tour · 6 Adults</div>
+        <div class="pkg-name">5 Night 6 Day Kashmir Group Tour</div>
+        <div class="pkg-details">
+          <span class="pkg-detail">Jammu to Jammu</span>
+          <span class="pkg-detail">Hotel Included</span>
+        </div>
+        <div class="pkg-price-row">
+          <div class="pkg-price">
+            <span class="price-old">₹12,999</span>
+            <span class="price-new">₹10,999 <span class="price-pp">/pp</span></span>
+          </div>
+          <a href="#contact" class="pkg-book">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pkg-card reveal reveal-delay-2">
+      <div class="pkg-badge">Couple</div>
+      <div class="pkg-img">
+        <img src="{{ url_for('static', filename='images/gallery/kashmir ladakh/5.jpg') }}" alt="Kashmir Couple Tour" loading="lazy">
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-type">Couple Tour · 6 Adults</div>
+        <div class="pkg-name">4 Night 5 Day Kashmir Couple Tour</div>
+        <div class="pkg-details">
+          <span class="pkg-detail">Srinagar to Srinagar</span>
+          <span class="pkg-detail">Romantic Stays</span>
+        </div>
+        <div class="pkg-price-row">
+          <div class="pkg-price">
+            <span class="price-new">₹14,499 <span class="price-pp">/pp</span></span>
+          </div>
+          <a href="#contact" class="pkg-book">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pkg-card reveal">
+      <div class="pkg-img">
+        <img src="{{ url_for('static', filename='images/gallery/kashmir ladakh/6.jpg') }}" alt="Ladakh Tour" loading="lazy">
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-type">Adventure Tour</div>
+        <div class="pkg-name">5 Night 6 Day Ladakh Tour</div>
+        <div class="pkg-details">
+          <span class="pkg-detail">High Altitude</span>
+          <span class="pkg-detail">4x4 Included</span>
+        </div>
+        <div class="pkg-price-row">
+          <div class="pkg-price">
+            <span class="price-new">₹15,999 <span class="price-pp">/pp</span></span>
+          </div>
+          <a href="#contact" class="pkg-book">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pkg-card reveal reveal-delay-1">
+      <div class="pkg-img">
+        <img src="{{ url_for('static', filename='images/gallery/shimla manali/2.jpeg') }}" alt="Shimla Manali" loading="lazy">
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-type">Hill Station · 6 Adults</div>
+        <div class="pkg-name">4 Night 5 Day Shimla Manali</div>
+        <div class="pkg-details">
+          <span class="pkg-detail">Ex Chandigarh / Delhi</span>
+          <span class="pkg-detail">Pickup & Drop</span>
+        </div>
+        <div class="pkg-price-row">
+          <div class="pkg-price">
+            <span class="price-new">₹9,999 <span class="price-pp">/pp</span></span>
+          </div>
+          <a href="#contact" class="pkg-book">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pkg-card reveal reveal-delay-2">
+      <div class="pkg-img">
+        <img src="{{ url_for('static', filename='images/gallery/gao/2.jpg') }}" alt="Goa Tour" loading="lazy">
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-type">Beach Tour · 6 Adults</div>
+        <div class="pkg-name">3 Night 4 Day Goa Tour</div>
+        <div class="pkg-details">
+          <span class="pkg-detail">Goa Railway Station</span>
+          <span class="pkg-detail">Pickup & Drop</span>
+        </div>
+        <div class="pkg-price-row">
+          <div class="pkg-price">
+            <span class="price-new">₹8,499 <span class="price-pp">/pp</span></span>
+          </div>
+          <a href="#contact" class="pkg-book">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pkg-card reveal">
+      <div class="pkg-img">
+        <img src="{{ url_for('static', filename='images/gallery/darjeeling/2.jpg') }}" alt="Darjeeling Tour" loading="lazy">
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-type">Hill Station · 6 Adults</div>
+        <div class="pkg-name">4 Night 5 Day Darjeeling Tour</div>
+        <div class="pkg-details">
+          <span class="pkg-detail">Darjeeling Bus/Rail</span>
+          <span class="pkg-detail">Pickup & Drop</span>
+        </div>
+        <div class="pkg-price-row">
+          <div class="pkg-price">
+            <span class="price-new">₹11,999 <span class="price-pp">/pp</span></span>
+          </div>
+          <a href="#contact" class="pkg-book">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pkg-card reveal reveal-delay-1">
+      <div class="pkg-img">
+        <img src="{{ url_for('static', filename='images/gallery/kerala/2.jpg') }}" alt="Kerala Tour" loading="lazy">
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-type">Backwaters · 6 Adults</div>
+        <div class="pkg-name">5 Night 6 Day Kerala Tour</div>
+        <div class="pkg-details">
+          <span class="pkg-detail">Kerala Bus/Rail</span>
+          <span class="pkg-detail">Houseboat Stay</span>
+        </div>
+        <div class="pkg-price-row">
+          <div class="pkg-price">
+            <span class="price-new">₹14,999 <span class="price-pp">/pp</span></span>
+          </div>
+          <a href="#contact" class="pkg-book">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pkg-card reveal reveal-delay-2">
+      <div class="pkg-badge">Romantic</div>
+      <div class="pkg-img">
+        <img src="{{ url_for('static', filename='images/gallery/kashmir ladakh/7.jpg') }}" alt="Kashmir Couple 6 Day" loading="lazy">
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-type">Couple Tour · 4 Adults</div>
+        <div class="pkg-name">5 Night 6 Day Kashmir Couple</div>
+        <div class="pkg-details">
+          <span class="pkg-detail">Jammu to Jammu</span>
+          <span class="pkg-detail">Premium Stays</span>
+        </div>
+        <div class="pkg-price-row">
+          <div class="pkg-price">
+            <span class="price-new">₹18,499 <span class="price-pp">/pp</span></span>
+          </div>
+          <a href="#contact" class="pkg-book">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- TRAVEL ESSENTIALS (User Requested) -->
+<section id="essentials">
+  <div class="centered">
+    <div class="section-label reveal">Travel Essentials</div>
+    <h2 class="section-title reveal reveal-delay-1">Get To Know<br>About</h2>
+  </div>
+  
+  <div class="essentials-grid">
+    <!-- Car Rentals -->
+    <div class="essential-card-item reveal">
+      <img src="{{ url_for('static', filename='images/car-rentals.jpg') }}" alt="Car Rentals">
+      <div class="essential-overlay-text">
+        <span class="essential-name-text">Car Rentals</span>
+      </div>
+    </div>
+    
+    <!-- Accomodation -->
+    <div class="essential-card-item reveal reveal-delay-1">
+      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=400&fit=crop" alt="Accomodation">
+      <div class="essential-overlay-text">
+        <span class="essential-name-text">Accomodation</span>
+      </div>
+    </div>
+    
+    <!-- Restaurants -->
+    <div class="essential-card-item reveal reveal-delay-2">
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop" alt="Restaurants">
+      <div class="essential-overlay-text">
+        <span class="essential-name-text">Restaurants</span>
+      </div>
+    </div>
+    
+    <!-- Hospitals -->
+    <div class="essential-card-item reveal reveal-delay-3">
+      <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&h=400&fit=crop" alt="Hospitals">
+      <div class="essential-overlay-text">
+        <span class="essential-name-text">Hospitals</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="centered">
+    <div class="section-label reveal">What We Offer</div>
+    <h2 class="section-title reveal reveal-delay-1">Everything Your<br>Journey Needs</h2>
+    <p class="section-sub reveal reveal-delay-2">From booking your first ticket to your final check-out — Zara handles it all.</p>
+  </div>
+  <div class="services-grid">
+    <div class="svc-card reveal">
+      <div class="svc-name">Flight Booking</div>
+      <div class="svc-desc">Domestic and international flight tickets at the best prices with easy cancellation options.</div>
+    </div>
+    <div class="svc-card reveal reveal-delay-1">
+      <div class="svc-name">Hotel Booking</div>
+      <div class="svc-desc">Handpicked hotels, resorts and homestays for every budget and preference.</div>
+    </div>
+    <div class="svc-card reveal reveal-delay-2">
+      <div class="svc-name">Train Tickets</div>
+      <div class="svc-desc">Hassle-free train ticket booking across all Indian Railway routes including Tatkal.</div>
+    </div>
+    <div class="svc-card reveal reveal-delay-3">
+      <div class="svc-name">Cab & Transport</div>
+      <div class="svc-desc">Private cabs, tempo travellers and luxury vehicles for all group sizes.</div>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-name">Family Tours</div>
+      <div class="svc-desc">Kid-friendly itineraries with comfortable stays and safe, enjoyable travel.</div>
+    </div>
+    <div class="svc-card reveal reveal-delay-1">
+      <div class="svc-name">Honeymoon Tours</div>
+      <div class="svc-desc">Romantic getaways with special touches — candlelight dinners, premium rooms and more.</div>
+    </div>
+    <div class="svc-card reveal reveal-delay-2">
+      <div class="svc-name">Solo Travel</div>
+      <div class="svc-desc">Safe, well-planned solo trips with group joining options and local expert guides.</div>
+    </div>
+    <div class="svc-card reveal reveal-delay-3">
+      <div class="svc-name">School & College Tours</div>
+      <div class="svc-desc">Educational and adventure tours for students with a safety-first approach.</div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SECTION -->
+<div class="video-section">
+  <div class="video-inner">
+    <div class="section-label reveal">Experience India</div>
+    <h2 class="section-title reveal reveal-delay-1">See the Magic<br>We Create</h2>
+    <p class="section-sub reveal reveal-delay-2">Every trip with Zara is a story worth telling. Watch how we turn travel dreams into unforgettable memories.</p>
+    <div class="video-wrap reveal reveal-delay-2" id="experienceSlider">
+      <img src="{{ url_for('static', filename='images/gallery/himachal/10.jpg') }}" class="active" alt="Experience 1">
+      <img src="{{ url_for('static', filename='images/gallery/rajasthan/9.jpg') }}" alt="Experience 2">
+      <img src="{{ url_for('static', filename='images/gallery/rajasthan/5.jpg') }}" alt="Experience 3">
+      <img src="{{ url_for('static', filename='images/gallery/shimla manali/7.jpg') }}" alt="Experience 4">
+      <img src="{{ url_for('static', filename='images/gallery/kashmir ladakh/6.jpg') }}" alt="Experience 5">
+    </div>
+    
+    <script>
+      (function() {
+        const slider = document.getElementById('experienceSlider');
+        const images = slider.querySelectorAll('img');
+        let current = 0;
+        
+        setInterval(() => {
+          images[current].classList.remove('active');
+          current = (current + 1) % images.length;
+          images[current].classList.add('active');
+        }, 4000);
+      })();
+    </script>
+  </div>
+</div>
+
+<!-- WHY US -->
+<section id="about" style="background: var(--white);">
+  <div class="why-grid">
+    <div class="why-img reveal">
+      <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=700&h=900&fit=crop" alt="Why Zara Tours" loading="lazy">
+      <div class="why-stat-box">
+        <div class="why-stat">
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="why-stat">
+          <div class="stat-num">15+</div>
+          <div class="stat-label">Destinations</div>
+        </div>
+        <div class="why-stat">
+          <div class="stat-num">4.9</div>
+          <div class="stat-label">Rating</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label reveal">Why Choose Us</div>
+      <h2 class="section-title reveal reveal-delay-1">Travel with Confidence,<br>Travel with Zara</h2>
+      <p class="section-sub reveal reveal-delay-2" style="margin-bottom: 32px;">We are more than a travel agency — we are your companions on every journey. Built on trust, driven by passion.</p>
+      <div class="why-points">
+        <div class="why-point reveal">
+          <div class="why-point-icon">&#9733;</div>
+          <div>
+            <div class="why-point-title">Trusted & Experienced</div>
+            <div class="why-point-desc">Years of experience planning tours across India. Hundreds of happy travellers trust Zara every season.</div>
+          </div>
+        </div>
+        <div class="why-point reveal reveal-delay-1">
+          <div class="why-point-icon">&#9670;</div>
+          <div>
+            <div class="why-point-title">Best Price Guarantee</div>
+            <div class="why-point-desc">Transparent pricing with no hidden charges. We guarantee the best value for every package.</div>
+          </div>
+        </div>
+        <div class="why-point reveal reveal-delay-2">
+          <div class="why-point-icon">&#9675;</div>
+          <div>
+            <div class="why-point-title">24/7 Travel Support</div>
+            <div class="why-point-desc">Our team is always just a call away — before, during, and after your journey.</div>
+          </div>
+        </div>
+        <div class="why-point reveal reveal-delay-3">
+          <div class="why-point-icon">&#9660;</div>
+          <div>
+            <div class="why-point-title">Customised Itineraries</div>
+            <div class="why-point-desc">Every trip is unique. We tailor tours to match your dates, budget, and travel style perfectly.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- TRAVEL SHORTS -->
+<section class="shorts-section">
+  <div class="centered">
+    <div class="section-label reveal">Moments in Motion</div>
+    <h2 class="section-title reveal reveal-delay-1">Catch the Vibe</h2>
+  </div>
+  
+  <div class="shorts-slider-wrap reveal reveal-delay-2">
+    <div class="shorts-grid">
+      <div class="shorts-item">
+        <iframe src="https://www.youtube.com/embed/bY1xEfsZEow?autoplay=1&mute=1&loop=1&playlist=bY1xEfsZEow&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      <div class="shorts-item">
+        <iframe src="https://www.youtube.com/embed/4Z4LjDyYOjM?autoplay=1&mute=1&loop=1&playlist=4Z4LjDyYOjM&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      <div class="shorts-item">
+        <iframe src="https://www.youtube.com/embed/yqWWe2GN7qs?autoplay=1&mute=1&loop=1&playlist=yqWWe2GN7qs&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      <div class="shorts-item">
+        <iframe src="https://www.youtube.com/embed/xOEl_a3zUsw?autoplay=1&mute=1&loop=1&playlist=xOEl_a3zUsw&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      <div class="shorts-item">
+        <iframe src="https://www.youtube.com/embed/jdlEl_HHNYg?autoplay=1&mute=1&loop=1&playlist=jdlEl_HHNYg&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      <div class="shorts-item">
+        <iframe src="https://www.youtube.com/embed/HhDErDQwIVk?autoplay=1&mute=1&loop=1&playlist=HhDErDQwIVk&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- END BANNER -->
+<div class="end-banner reveal">
+  <img src="{{ url_for('static', filename='images/banner_end.png') }}" alt="Travel Banner">
+  <div class="end-banner-overlay">
+    <h2 class="end-banner-title">Ready for Your Next Great Adventure?</h2>
+    <a href="https://wa.me/919982965965" class="end-banner-btn" target="_blank">
+      <span>Connect on WhatsApp</span>
+    </a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="centered">
+    <div class="section-label reveal">Get In Touch</div>
+    <h2 class="section-title reveal reveal-delay-1">Plan Your Dream<br>Trip Today</h2>
+    <p class="section-sub reveal reveal-delay-2">Fill the form or call us directly — we'll craft the perfect tour just for you.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <div class="contact-card">
+        <div class="contact-icon">&#9742;</div>
+        <div>
+          <div class="contact-label">Call / WhatsApp</div>
+          <div class="contact-val">9982 965 965</div>
+          <div class="contact-val">77 3737 7051</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">&#9200;</div>
+        <div>
+          <div class="contact-label">Working Hours</div>
+          <div class="contact-val">Mon – Sat, 9 AM – 8 PM</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">&#9728;</div>
+        <div>
+          <div class="contact-label">We Cover</div>
+          <div class="contact-val">Kashmir · Ladakh · Goa · Kerala · Rajasthan · Himachal · Darjeeling & more</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">&#10022;</div>
+        <div>
+          <div class="contact-label">Speciality</div>
+          <div class="contact-val">Complete Indian Destination Planner</div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form reveal reveal-delay-1">
+      <div class="form-title">Send Us a Message</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="e.g. Rahul Sharma">
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+91 98765 43210">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Destination</label>
+        <select>
+          <option>Select destination...</option>
+          <option>Kashmir</option>
+          <option>Ladakh</option>
+          <option>Shimla · Manali</option>
+          <option>Goa</option>
+          <option>Kerala</option>
+          <option>Darjeeling · Gangtok</option>
+          <option>Rajasthan</option>
+          <option>Mumbai</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Tour Type</label>
+          <select>
+            <option>Solo Tour</option>
+            <option>Family Tour</option>
+            <option>Couple Tour</option>
+            <option>Group Tour</option>
+            <option>School/College</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>No. of Guests</label>
+          <input type="number" placeholder="e.g. 4" min="1">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Message / Requirements</label>
+        <textarea placeholder="Tell us your travel dates, budget or any special requirements..."></textarea>
+      </div>
+      <button class="form-submit" onclick="handleSubmit(this)">Send Enquiry</button>
+    </div>
+  </div>
+</section>
+{% endblock %}

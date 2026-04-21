@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- GALLERY BANNER -->
+<div class="gallery-hero">
+  <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1600&h=600&fit=crop" alt="India Travel Gallery Banner">
+  <div class="gallery-hero-overlay">
+    <h1 class="gallery-title">Our Visual Journey</h1>
+    <p class="gallery-sub">Discover the breathtaking beauty of Incredible India through our lens.</p>
+  </div>
+</div>
+
+<!-- MASONRY / NO-GAP GALLERY -->
+<!-- Total Images Found: {{ images|length }} -->
+<section class="gallery-section">
+  <div class="gallery-grid-nogap">
+    {% for image in images %}
+    <div class="gallery-item-nogap">
+      <img src="{{ url_for('static', filename=image) }}" alt="Gallery Image" loading="lazy">
+    </div>
+    {% else %}
+    <p style="color: white; padding: 50px; text-align: center;">No images found in the gallery folder.</p>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- END BANNER -->
+<div class="end-banner">
+  <img src="{{ url_for('static', filename='images/banner_end.png') }}" alt="Travel Banner">
+  <div class="end-banner-overlay">
+    <h2 class="end-banner-title">Ready for Your Next Great Adventure?</h2>
+    <a href="https://wa.me/919982965965" class="end-banner-btn" target="_blank">
+      <span>Connect on WhatsApp</span>
+    </a>
+  </div>
+</div>
+{% endblock %}

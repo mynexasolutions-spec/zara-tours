@@ -1,0 +1,35 @@
+<!-- NAV -->
+<nav id="navbar">
+  <a href="{{ url_for('home') }}" class="logo">
+    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="24" cy="24" r="22" fill="#3d2b1f" opacity="0.1" stroke="#3d2b1f" stroke-width="1.5"/>
+      <text x="24" y="30" text-anchor="middle" font-family="Georgia,serif" font-size="18" font-weight="bold" fill="#3d2b1f">Z</text>
+    </svg>
+    <div class="logo-text">
+      <span class="logo-name">Zara Tour</span>
+      <span class="logo-tagline-nav">N-Travels · India</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="{{ url_for('home') }}#destinations">Destinations</a></li>
+    <li><a href="{{ url_for('home') }}#packages">Packages</a></li>
+    <li><a href="{{ url_for('home') }}#services">Services</a></li>
+    <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+    <li><a href="{{ url_for('home') }}#about">About</a></li>
+    <li><a href="{{ url_for('home') }}#contact" class="nav-cta">Book Now</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="openMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMenu()">✕</button>
+  <a href="{{ url_for('home') }}#destinations" onclick="closeMenu()">Destinations</a>
+  <a href="{{ url_for('home') }}#packages" onclick="closeMenu()">Packages</a>
+  <a href="{{ url_for('home') }}#services" onclick="closeMenu()">Services</a>
+  <a href="{{ url_for('gallery') }}" onclick="closeMenu()">Gallery</a>
+  <a href="{{ url_for('home') }}#about" onclick="closeMenu()">About</a>
+  <a href="{{ url_for('home') }}#contact" onclick="closeMenu()">Contact</a>
+</div>
