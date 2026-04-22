@@ -1,59 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zara Tour-N-Travels | हर सफर एक नई कहानी</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:wght@300;400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:wght@300;400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
 <body>
 
 
-    {% include 'components/navbar.html' %}
+  {% include 'components/navbar.html' %}
 
-    {% block content %}{% endblock %}
+  {% block content %}{% endblock %}
 
-    {% include 'components/footer.html' %}
+  {% include 'components/footer.html' %}
 
-    {% block scripts %}
-<script>
-  // Navbar scroll
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
+  {% block scripts %}
+  <script>
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
 
-  // Mobile menu
-  function openMenu()  { document.getElementById('mobileMenu').classList.add('open');    document.body.style.overflow='hidden'; }
-  function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow=''; }
+    // Mobile menu
+    function openMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow = ''; }
 
-  // Scroll reveal
-  const revealEls = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
-  revealEls.forEach(el => observer.observe(el));
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => observer.observe(el));
 
-  // Form submit
-  function handleSubmit(btn) {
-    btn.textContent = 'Enquiry Sent — We\'ll Call You Soon';
-    btn.style.background = 'var(--mint)';
-    setTimeout(() => { btn.textContent = 'Send Enquiry'; btn.style.background = ''; }, 4000);
-  }
+    // Form submit
+    function handleSubmit(btn) {
+      btn.textContent = 'Enquiry Sent — We\'ll Call You Soon';
+      btn.style.background = 'var(--mint)';
+      setTimeout(() => { btn.textContent = 'Send Enquiry'; btn.style.background = ''; }, 4000);
+    }
 
-  // Hero slider
-  const heroSlides = document.querySelectorAll('.hero-slide');
-  if (heroSlides.length > 0) {
-    let current = 0;
-    setInterval(() => {
-      heroSlides[current].classList.remove('active');
-      current = (current + 1) % heroSlides.length;
-      heroSlides[current].classList.add('active');
-    }, 4500);
-  }
+    // Hero slider
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    if (heroSlides.length > 0) {
+      let current = 0;
+      setInterval(() => {
+        heroSlides[current].classList.remove('active');
+        current = (current + 1) % heroSlides.length;
+        heroSlides[current].classList.add('active');
+      }, 4500);
+    }
 
 
-</script>
-{% endblock %}
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  {% endblock %}
 </body>
+
 </html>

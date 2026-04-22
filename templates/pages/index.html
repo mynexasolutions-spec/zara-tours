@@ -5,13 +5,16 @@
 <section class="hero" id="home">
   <div class="hero-slider" id="heroSlider">
     <div class="hero-slide active">
-      <img src="https://images.pexels.com/photos/7764191/pexels-photo-7764191.jpeg" alt="India Travel Journey" loading="eager">
+      <img src="https://images.pexels.com/photos/7764191/pexels-photo-7764191.jpeg" alt="India Travel Journey"
+        loading="eager">
     </div>
     <div class="hero-slide">
-      <img src="https://images.pexels.com/photos/5374231/pexels-photo-5374231.jpeg" alt="Indian Destinations" loading="eager">
+      <img src="https://images.pexels.com/photos/5374231/pexels-photo-5374231.jpeg" alt="Indian Destinations"
+        loading="eager">
     </div>
     <div class="hero-slide">
-      <img src="https://images.pexels.com/photos/32262460/pexels-photo-32262460.jpeg" alt="India Tour Package" loading="eager">
+      <img src="https://images.pexels.com/photos/32262460/pexels-photo-32262460.jpeg" alt="India Tour Package"
+        loading="eager">
     </div>
   </div>
   <div class="hero-overlay"></div>
@@ -19,7 +22,8 @@
     <div class="hero-badge">🇮🇳 Complete Indian Destination Planner</div>
     <h1 class="hero-title">Find Your<br>Perfect <span>Journey</span></h1>
     <p class="hero-hindi">हर सफर एक नई कहानी — ज़ारा टूर के साथ</p>
-    <p class="hero-sub">Handcrafted tours across the most breathtaking destinations in India.<br>Unplug, explore, and create memories that last forever.</p>
+    <p class="hero-sub">Handcrafted tours across the most breathtaking destinations in India.<br>Unplug, explore, and
+      create memories that last forever.</p>
     <div class="hero-pills">
       <div class="pill"><span class="dot"></span> Solo Tours</div>
       <div class="pill"><span class="dot"></span> Family Tours</div>
@@ -43,7 +47,7 @@
     <div class="booking-field">
       <div class="field-label">Destination</div>
       <div class="field-value">
-        <span class="field-icon">📍</span> 
+        <span class="field-icon">📍</span>
         <select id="book-dest" class="booking-select">
           <option value="Kashmir">Kashmir</option>
           <option value="Ladakh">Ladakh</option>
@@ -96,14 +100,14 @@
 </div>
 
 <script>
-function sendBooking() {
-  const dest = document.getElementById('book-dest').value;
-  const type = document.getElementById('book-type').value;
-  const dur = document.getElementById('book-dur').value;
-  const guests = document.getElementById('book-guests').value;
-  const message = `Hi Zara Tours! I'm interested in booking a stay.\n\n*Destination:* ${dest}\n*Tour Type:* ${type}\n*Duration:* ${dur}\n*Guests:* ${guests}\n\nPlease share the details!`;
-  window.open(`https://wa.me/919982965965?text=${encodeURIComponent(message)}`, '_blank');
-}
+  function sendBooking() {
+    const dest = document.getElementById('book-dest').value;
+    const type = document.getElementById('book-type').value;
+    const dur = document.getElementById('book-dur').value;
+    const guests = document.getElementById('book-guests').value;
+    const message = `Hi Zara Tours! I'm interested in booking a stay.\n\n*Destination:* ${dest}\n*Tour Type:* ${type}\n*Duration:* ${dur}\n*Guests:* ${guests}\n\nPlease share the details!`;
+    window.open(`https://wa.me/919982965965?text=${encodeURIComponent(message)}`, '_blank');
+  }
 </script>
 
 <!-- DESTINATIONS -->
@@ -111,7 +115,8 @@ function sendBooking() {
   <div class="centered">
     <div class="section-label reveal">Our Destinations</div>
     <h2 class="section-title reveal reveal-delay-1">Explore<br>India's Wonders</h2>
-    <p class="section-sub reveal reveal-delay-2">From snow-capped Himalayan peaks to tropical Kerala backwaters — we cover every corner of Incredible India.</p>
+    <p class="section-sub reveal reveal-delay-2">From snow-capped Himalayan peaks to tropical Kerala backwaters — we
+      cover every corner of Incredible India.</p>
   </div>
   <div class="destinations-grid">
     <div class="dest-card tall reveal">
@@ -119,6 +124,7 @@ function sendBooking() {
       <div class="dest-overlay">
         <div class="dest-tag">North India · Heaven on Earth</div>
         <div class="dest-name">Kashmir</div>
+
       </div>
     </div>
     <div class="dest-card reveal reveal-delay-1">
@@ -126,15 +132,14 @@ function sendBooking() {
       <div class="dest-overlay">
         <div class="dest-tag">North India</div>
         <div class="dest-name">Ladakh</div>
-        <a href="#packages" class="dest-link">Explore →</a>
       </div>
     </div>
     <div class="dest-card reveal reveal-delay-2">
-      <img src="{{ url_for('static', filename='images/gallery/shimla manali/1.jpeg') }}" alt="Shimla Manali" loading="lazy">
+      <img src="{{ url_for('static', filename='images/gallery/shimla manali/1.jpeg') }}" alt="Shimla Manali"
+        loading="lazy">
       <div class="dest-overlay">
         <div class="dest-tag">Himachal Pradesh</div>
         <div class="dest-name">Shimla · Manali</div>
-        <a href="#packages" class="dest-link">Explore →</a>
       </div>
     </div>
     <div class="dest-card reveal reveal-delay-1">
@@ -142,7 +147,6 @@ function sendBooking() {
       <div class="dest-overlay">
         <div class="dest-tag">South India</div>
         <div class="dest-name">Kerala</div>
-        <a href="#packages" class="dest-link">Explore →</a>
       </div>
     </div>
     <div class="dest-card reveal reveal-delay-2">
@@ -150,7 +154,6 @@ function sendBooking() {
       <div class="dest-overlay">
         <div class="dest-tag">West India</div>
         <div class="dest-name">Goa</div>
-        <a href="#packages" class="dest-link">Explore →</a>
       </div>
     </div>
     <div class="dest-card reveal reveal-delay-3">
@@ -158,7 +161,6 @@ function sendBooking() {
       <div class="dest-overlay">
         <div class="dest-tag">East India</div>
         <div class="dest-name">Darjeeling</div>
-        <a href="#packages" class="dest-link">Explore →</a>
       </div>
     </div>
     <div class="dest-card reveal reveal-delay-2">
@@ -166,7 +168,6 @@ function sendBooking() {
       <div class="dest-overlay">
         <div class="dest-tag">West India</div>
         <div class="dest-name">Rajasthan</div>
-        <a href="#packages" class="dest-link">Explore →</a>
       </div>
     </div>
   </div>
@@ -177,14 +178,16 @@ function sendBooking() {
   <div class="centered">
     <div class="section-label reveal">Tour Packages</div>
     <h2 class="section-title reveal reveal-delay-1">Special Offers &<br>Best Deals</h2>
-    <p class="section-sub reveal reveal-delay-2">Carefully curated packages for every kind of traveller — all-inclusive, transparent pricing, no hidden costs.</p>
+    <p class="section-sub reveal reveal-delay-2">Carefully curated packages for every kind of traveller — all-inclusive,
+      transparent pricing, no hidden costs.</p>
   </div>
   <div class="packages-grid">
 
     <div class="pkg-card featured reveal">
       <div class="pkg-badge">Best Seller</div>
       <div class="pkg-img">
-        <img src="{{ url_for('static', filename='images/gallery/kashmir ladakh/3.jpg') }}" alt="Kashmir Group Tour" loading="lazy">
+        <img src="{{ url_for('static', filename='images/gallery/kashmir ladakh/3.jpg') }}" alt="Kashmir Group Tour"
+          loading="lazy">
       </div>
       <div class="pkg-body">
         <div class="pkg-type">Group Tour · 12 Adults</div>
@@ -206,7 +209,8 @@ function sendBooking() {
 
     <div class="pkg-card reveal reveal-delay-1">
       <div class="pkg-img">
-        <img src="{{ url_for('static', filename='images/gallery/kashmir ladakh/4.jpg') }}" alt="Kashmir 6 Day" loading="lazy">
+        <img src="{{ url_for('static', filename='images/gallery/kashmir ladakh/4.jpg') }}" alt="Kashmir 6 Day"
+          loading="lazy">
       </div>
       <div class="pkg-body">
         <div class="pkg-type">Group Tour · 6 Adults</div>
@@ -228,7 +232,8 @@ function sendBooking() {
     <div class="pkg-card reveal reveal-delay-2">
       <div class="pkg-badge">Couple</div>
       <div class="pkg-img">
-        <img src="{{ url_for('static', filename='images/gallery/kashmir ladakh/5.jpg') }}" alt="Kashmir Couple Tour" loading="lazy">
+        <img src="{{ url_for('static', filename='images/gallery/kashmir ladakh/5.jpg') }}" alt="Kashmir Couple Tour"
+          loading="lazy">
       </div>
       <div class="pkg-body">
         <div class="pkg-type">Couple Tour · 6 Adults</div>
@@ -248,7 +253,8 @@ function sendBooking() {
 
     <div class="pkg-card reveal">
       <div class="pkg-img">
-        <img src="{{ url_for('static', filename='images/gallery/kashmir ladakh/6.jpg') }}" alt="Ladakh Tour" loading="lazy">
+        <img src="{{ url_for('static', filename='images/gallery/kashmir ladakh/6.jpg') }}" alt="Ladakh Tour"
+          loading="lazy">
       </div>
       <div class="pkg-body">
         <div class="pkg-type">Adventure Tour</div>
@@ -268,7 +274,8 @@ function sendBooking() {
 
     <div class="pkg-card reveal reveal-delay-1">
       <div class="pkg-img">
-        <img src="{{ url_for('static', filename='images/gallery/shimla manali/2.jpeg') }}" alt="Shimla Manali" loading="lazy">
+        <img src="{{ url_for('static', filename='images/gallery/shimla manali/2.jpeg') }}" alt="Shimla Manali"
+          loading="lazy">
       </div>
       <div class="pkg-body">
         <div class="pkg-type">Hill Station · 6 Adults</div>
@@ -308,7 +315,8 @@ function sendBooking() {
 
     <div class="pkg-card reveal">
       <div class="pkg-img">
-        <img src="{{ url_for('static', filename='images/gallery/darjeeling/2.jpg') }}" alt="Darjeeling Tour" loading="lazy">
+        <img src="{{ url_for('static', filename='images/gallery/darjeeling/2.jpg') }}" alt="Darjeeling Tour"
+          loading="lazy">
       </div>
       <div class="pkg-body">
         <div class="pkg-type">Hill Station · 6 Adults</div>
@@ -349,7 +357,8 @@ function sendBooking() {
     <div class="pkg-card reveal reveal-delay-2">
       <div class="pkg-badge">Romantic</div>
       <div class="pkg-img">
-        <img src="{{ url_for('static', filename='images/gallery/kashmir ladakh/7.jpg') }}" alt="Kashmir Couple 6 Day" loading="lazy">
+        <img src="{{ url_for('static', filename='images/gallery/kashmir ladakh/7.jpg') }}" alt="Kashmir Couple 6 Day"
+          loading="lazy">
       </div>
       <div class="pkg-body">
         <div class="pkg-type">Couple Tour · 4 Adults</div>
@@ -377,7 +386,7 @@ function sendBooking() {
     <div class="section-label reveal">Travel Essentials</div>
     <h2 class="section-title reveal reveal-delay-1">Get To Know<br>About</h2>
   </div>
-  
+
   <div class="essentials-grid">
     <!-- Car Rentals -->
     <div class="essential-card-item reveal">
@@ -386,7 +395,7 @@ function sendBooking() {
         <span class="essential-name-text">Car Rentals</span>
       </div>
     </div>
-    
+
     <!-- Accomodation -->
     <div class="essential-card-item reveal reveal-delay-1">
       <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=400&fit=crop" alt="Accomodation">
@@ -394,7 +403,7 @@ function sendBooking() {
         <span class="essential-name-text">Accomodation</span>
       </div>
     </div>
-    
+
     <!-- Restaurants -->
     <div class="essential-card-item reveal reveal-delay-2">
       <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop" alt="Restaurants">
@@ -402,7 +411,7 @@ function sendBooking() {
         <span class="essential-name-text">Restaurants</span>
       </div>
     </div>
-    
+
     <!-- Hospitals -->
     <div class="essential-card-item reveal reveal-delay-3">
       <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&h=400&fit=crop" alt="Hospitals">
@@ -418,12 +427,14 @@ function sendBooking() {
   <div class="centered">
     <div class="section-label reveal">What We Offer</div>
     <h2 class="section-title reveal reveal-delay-1">Everything Your<br>Journey Needs</h2>
-    <p class="section-sub reveal reveal-delay-2">From booking your first ticket to your final check-out — Zara handles it all.</p>
+    <p class="section-sub reveal reveal-delay-2">From booking your first ticket to your final check-out — Zara handles
+      it all.</p>
   </div>
   <div class="services-grid">
     <div class="svc-card reveal">
       <div class="svc-name">Flight Booking</div>
-      <div class="svc-desc">Domestic and international flight tickets at the best prices with easy cancellation options.</div>
+      <div class="svc-desc">Domestic and international flight tickets at the best prices with easy cancellation options.
+      </div>
     </div>
     <div class="svc-card reveal reveal-delay-1">
       <div class="svc-name">Hotel Booking</div>
@@ -461,28 +472,64 @@ function sendBooking() {
   <div class="video-inner">
     <div class="section-label reveal">Experience India</div>
     <h2 class="section-title reveal reveal-delay-1">See the Magic<br>We Create</h2>
-    <p class="section-sub reveal reveal-delay-2">Every trip with Zara is a story worth telling. Watch how we turn travel dreams into unforgettable memories.</p>
-    <div class="video-wrap reveal reveal-delay-2" id="experienceSlider">
-      <img src="{{ url_for('static', filename='images/gallery/himachal/10.jpg') }}" class="active" alt="Experience 1">
-      <img src="{{ url_for('static', filename='images/gallery/rajasthan/9.jpg') }}" alt="Experience 2">
-      <img src="{{ url_for('static', filename='images/gallery/rajasthan/5.jpg') }}" alt="Experience 3">
-      <img src="{{ url_for('static', filename='images/gallery/shimla manali/7.jpg') }}" alt="Experience 4">
-      <img src="{{ url_for('static', filename='images/gallery/kashmir ladakh/6.jpg') }}" alt="Experience 5">
+    <p class="section-sub reveal reveal-delay-2">Every trip with Zara is a story worth telling. Watch how we turn travel
+      dreams into unforgettable memories.</p>
+    <!-- style="position: relative;" ko class dedo -->
+    <div class="swiper-wrapper-box">
+      <div class="swiper swiper-experience">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='images/gallery/himachal/10.jpg') }}" alt="Himachal Pradesh">
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='images/gallery/rajasthan/9.jpg') }}" alt="Rajasthan">
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='images/gallery/rajasthan/5.jpg') }}" alt="Rajasthan Heritage">
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='images/gallery/shimla manali/7.jpg') }}" alt="Shimla Manali">
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='images/gallery/kashmir ladakh/6.jpg') }}" alt="Kashmir Ladakh">
+          </div>
+        </div>
+      </div>
+
+      <!-- Arrows INSIDE wrapper-box -->
+      <button class="swiper-btn" id="expPrev" aria-label="Previous">
+        <svg viewBox="0 0 24 24">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </button>
+      <button class="swiper-btn" id="expNext" aria-label="Next">
+        <svg viewBox="0 0 24 24">
+          <polyline points="9 6 15 12 9 18" />
+        </svg>
+      </button>
     </div>
-    
+
     <script>
-      (function() {
-        const slider = document.getElementById('experienceSlider');
-        const images = slider.querySelectorAll('img');
-        let current = 0;
-        
-        setInterval(() => {
-          images[current].classList.remove('active');
-          current = (current + 1) % images.length;
-          images[current].classList.add('active');
-        }, 4000);
-      })();
+      document.addEventListener('DOMContentLoaded', function () {
+        new Swiper('.swiper-experience', {
+          loop: true,
+          speed: 680,
+          grabCursor: true,
+          slidesPerView: 1,
+          spaceBetween: 16,
+          breakpoints: {
+            600: { slidesPerView: 2, spaceBetween: 14 },
+            900: { slidesPerView: 3, spaceBetween: 16 },
+            1024: { slidesPerView: 4, spaceBetween: 18 }
+          },
+          navigation: {
+            prevEl: '#expPrev',
+            nextEl: '#expNext',
+          }
+        });
+      });
     </script>
+
   </div>
 </div>
 
@@ -490,7 +537,8 @@ function sendBooking() {
 <section id="about" style="background: var(--white);">
   <div class="why-grid">
     <div class="why-img reveal">
-      <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=700&h=900&fit=crop" alt="Why Zara Tours" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=700&h=900&fit=crop" alt="Why Zara Tours"
+        loading="lazy">
       <div class="why-stat-box">
         <div class="why-stat">
           <div class="stat-num">500+</div>
@@ -509,34 +557,39 @@ function sendBooking() {
     <div>
       <div class="section-label reveal">Why Choose Us</div>
       <h2 class="section-title reveal reveal-delay-1">Travel with Confidence,<br>Travel with Zara</h2>
-      <p class="section-sub reveal reveal-delay-2" style="margin-bottom: 32px;">We are more than a travel agency — we are your companions on every journey. Built on trust, driven by passion.</p>
+      <p class="section-sub reveal reveal-delay-2" style="margin-bottom: 32px;">We are more than a travel agency — we
+        are your companions on every journey. Built on trust, driven by passion.</p>
       <div class="why-points">
         <div class="why-point reveal">
           <div class="why-point-icon">&#9733;</div>
           <div>
             <div class="why-point-title">Trusted & Experienced</div>
-            <div class="why-point-desc">Years of experience planning tours across India. Hundreds of happy travellers trust Zara every season.</div>
+            <div class="why-point-desc">Years of experience planning tours across India. Hundreds of happy travellers
+              trust Zara every season.</div>
           </div>
         </div>
         <div class="why-point reveal reveal-delay-1">
           <div class="why-point-icon">&#9670;</div>
           <div>
             <div class="why-point-title">Best Price Guarantee</div>
-            <div class="why-point-desc">Transparent pricing with no hidden charges. We guarantee the best value for every package.</div>
+            <div class="why-point-desc">Transparent pricing with no hidden charges. We guarantee the best value for
+              every package.</div>
           </div>
         </div>
         <div class="why-point reveal reveal-delay-2">
           <div class="why-point-icon">&#9675;</div>
           <div>
             <div class="why-point-title">24/7 Travel Support</div>
-            <div class="why-point-desc">Our team is always just a call away — before, during, and after your journey.</div>
+            <div class="why-point-desc">Our team is always just a call away — before, during, and after your journey.
+            </div>
           </div>
         </div>
         <div class="why-point reveal reveal-delay-3">
           <div class="why-point-icon">&#9660;</div>
           <div>
             <div class="why-point-title">Customised Itineraries</div>
-            <div class="why-point-desc">Every trip is unique. We tailor tours to match your dates, budget, and travel style perfectly.</div>
+            <div class="why-point-desc">Every trip is unique. We tailor tours to match your dates, budget, and travel
+              style perfectly.</div>
           </div>
         </div>
       </div>
@@ -551,26 +604,38 @@ function sendBooking() {
     <div class="section-label reveal">Moments in Motion</div>
     <h2 class="section-title reveal reveal-delay-1">Catch the Vibe</h2>
   </div>
-  
+
   <div class="shorts-slider-wrap reveal reveal-delay-2">
     <div class="shorts-grid">
       <div class="shorts-item">
-        <iframe src="https://www.youtube.com/embed/bY1xEfsZEow?autoplay=1&mute=1&loop=1&playlist=bY1xEfsZEow&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe
+          src="https://www.youtube.com/embed/bY1xEfsZEow?autoplay=1&mute=1&loop=1&playlist=bY1xEfsZEow&controls=0&modestbranding=1&rel=0"
+          allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
       <div class="shorts-item">
-        <iframe src="https://www.youtube.com/embed/4Z4LjDyYOjM?autoplay=1&mute=1&loop=1&playlist=4Z4LjDyYOjM&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe
+          src="https://www.youtube.com/embed/4Z4LjDyYOjM?autoplay=1&mute=1&loop=1&playlist=4Z4LjDyYOjM&controls=0&modestbranding=1&rel=0"
+          allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
       <div class="shorts-item">
-        <iframe src="https://www.youtube.com/embed/yqWWe2GN7qs?autoplay=1&mute=1&loop=1&playlist=yqWWe2GN7qs&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe
+          src="https://www.youtube.com/embed/yqWWe2GN7qs?autoplay=1&mute=1&loop=1&playlist=yqWWe2GN7qs&controls=0&modestbranding=1&rel=0"
+          allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
       <div class="shorts-item">
-        <iframe src="https://www.youtube.com/embed/xOEl_a3zUsw?autoplay=1&mute=1&loop=1&playlist=xOEl_a3zUsw&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe
+          src="https://www.youtube.com/embed/xOEl_a3zUsw?autoplay=1&mute=1&loop=1&playlist=xOEl_a3zUsw&controls=0&modestbranding=1&rel=0"
+          allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
       <div class="shorts-item">
-        <iframe src="https://www.youtube.com/embed/jdlEl_HHNYg?autoplay=1&mute=1&loop=1&playlist=jdlEl_HHNYg&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe
+          src="https://www.youtube.com/embed/jdlEl_HHNYg?autoplay=1&mute=1&loop=1&playlist=jdlEl_HHNYg&controls=0&modestbranding=1&rel=0"
+          allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
       <div class="shorts-item">
-        <iframe src="https://www.youtube.com/embed/HhDErDQwIVk?autoplay=1&mute=1&loop=1&playlist=HhDErDQwIVk&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe
+          src="https://www.youtube.com/embed/HhDErDQwIVk?autoplay=1&mute=1&loop=1&playlist=HhDErDQwIVk&controls=0&modestbranding=1&rel=0"
+          allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -592,7 +657,8 @@ function sendBooking() {
   <div class="centered">
     <div class="section-label reveal">Get In Touch</div>
     <h2 class="section-title reveal reveal-delay-1">Plan Your Dream<br>Trip Today</h2>
-    <p class="section-sub reveal reveal-delay-2">Fill the form or call us directly — we'll craft the perfect tour just for you.</p>
+    <p class="section-sub reveal reveal-delay-2">Fill the form or call us directly — we'll craft the perfect tour just
+      for you.</p>
   </div>
   <div class="contact-grid">
     <div class="contact-info reveal">
