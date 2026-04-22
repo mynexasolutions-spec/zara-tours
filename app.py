@@ -7,6 +7,14 @@ app = Flask(__name__)
 def home():
     return render_template('pages/index.html')
 
+@app.route('/events')
+def events():
+    return render_template('pages/events.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('pages/contact.html')
+
 @app.route('/gallery')
 def gallery():
     # Get all images dynamically

@@ -1,14 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<!-- GALLERY BANNER -->
-<div class="gallery-hero">
-  <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1600&h=600&fit=crop" alt="India Travel Gallery Banner">
-  <div class="gallery-hero-overlay">
-    <h1 class="gallery-title">Our Visual Journey</h1>
-    <p class="gallery-sub">Discover the breathtaking beauty of Incredible India through our lens.</p>
+<!-- GALLERY HERO -->
+<section class="hero gallery-hero">
+  <div class="hero-slider">
+    <div class="hero-slide active">
+      <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1600&h=600&fit=crop" alt="India Travel Gallery Banner">
+    </div>
   </div>
-</div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">📸 Visual Journey</div>
+    <h1 class="hero-title">Our <span>Gallery</span></h1>
+    <p class="hero-hindi">खूबसूरत यादें — ज़ारा टूर के साथ</p>
+    <p class="hero-sub">Discover the breathtaking beauty of Incredible India through our lens. Every photo tells a story of adventure and discovery.</p>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
 
 <!-- MASONRY / NO-GAP GALLERY -->
 <!-- Total Images Found: {{ images|length }} -->

@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- CONTACT HERO -->
+<div class="hero contact-hero">
+  <div class="hero-slider">
+    <div class="hero-slide active">
+      <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1800" alt="Travel Contact">
+    </div>
+    <div class="hero-slide">
+      <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1800" alt="India Journey">
+    </div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">📞 Get In Touch</div>
+    <h1 class="hero-title">Let's Plan Your<br>Perfect <span>Trip</span></h1>
+    <p class="hero-hindi">आपका सफर, हमारी ज़िम्मेदारी</p>
+    <p class="hero-sub">Reach out to us for tour bookings, custom itineraries, or event planning. We're here to make your journey unforgettable.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/919982965965?text=Hi%20Zara%20Tours!%20I%20want%20to%20plan%20a%20trip." class="btn-primary">💬 WhatsApp Us</a>
+      <a href="tel:9982965965" class="btn-outline">📞 Call Now</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</div>
+
+<!-- GOOGLE MAP -->
+<section class="map-section">
+  <div class="centered">
+    <div class="section-label reveal">Find Us</div>
+    <h2 class="section-title reveal reveal-delay-1">Our Location</h2>
+  </div>
+  <div class="map-wrap reveal reveal-delay-2">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.0!2d75.7873!3d26.9124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDU0JzQ0LjYiTiA3NcKwNDcnMTQuMyJF!5e0!3m2!1sen!2sin!4v1"
+      width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
+
+<!-- CONTACT INFO + FORM -->
+<section id="contact" class="contact-section">
+  <div class="centered">
+    <div class="section-label reveal">Get In Touch</div>
+    <h2 class="section-title reveal reveal-delay-1">Plan Your Dream<br>Trip Today</h2>
+    <p class="section-sub reveal reveal-delay-2">Fill the form or call us directly — we'll craft the perfect tour just for you.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <div class="contact-card">
+        <div class="contact-icon">&#9742;</div>
+        <div>
+          <div class="contact-label">Call / WhatsApp</div>
+          <div class="contact-val">9982 965 965</div>
+          <div class="contact-val">77 3737 7051</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">&#9200;</div>
+        <div>
+          <div class="contact-label">Working Hours</div>
+          <div class="contact-val">Mon – Sat, 9 AM – 8 PM</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">&#9728;</div>
+        <div>
+          <div class="contact-label">We Cover</div>
+          <div class="contact-val">Kashmir · Ladakh · Goa · Kerala · Rajasthan · Himachal · Darjeeling & more</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">&#10022;</div>
+        <div>
+          <div class="contact-label">Speciality</div>
+          <div class="contact-val">Complete Indian Destination Planner</div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form reveal reveal-delay-1">
+      <div class="form-title">Send Us a Message</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" id="contact-name" placeholder="e.g. Rahul Sharma">
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="contact-phone" placeholder="+91 98765 43210">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Destination</label>
+        <select id="contact-dest">
+          <option>Select destination...</option>
+          <option>Kashmir</option>
+          <option>Ladakh</option>
+          <option>Shimla · Manali</option>
+          <option>Goa</option>
+          <option>Kerala</option>
+          <option>Darjeeling · Gangtok</option>
+          <option>Rajasthan</option>
+          <option>Mumbai</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Tour Type</label>
+          <select id="contact-type">
+            <option>Solo Tour</option>
+            <option>Family Tour</option>
+            <option>Couple Tour</option>
+            <option>Group Tour</option>
+            <option>School/College</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>No. of Guests</label>
+          <input type="number" id="contact-guests" placeholder="e.g. 4" min="1">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Message / Requirements</label>
+        <textarea id="contact-msg" placeholder="Tell us your travel dates, budget or any special requirements..."></textarea>
+      </div>
+      <button class="form-submit" onclick="handleSubmit(this)">Send Enquiry</button>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
