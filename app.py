@@ -14,7 +14,6 @@ def events():
 @app.route('/contact')
 def contact():
     return render_template('pages/contact.html')
-
 @app.route('/gallery')
 def gallery():
     # Get all images dynamically
