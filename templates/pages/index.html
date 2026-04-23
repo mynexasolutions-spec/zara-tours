@@ -513,10 +513,16 @@
       document.addEventListener('DOMContentLoaded', function () {
         new Swiper('.swiper-experience', {
           loop: true,
+          autoplay: true,
           speed: 680,
           grabCursor: true,
           slidesPerView: 1,
           spaceBetween: 16,
+          autoplay: {
+            delay: 1500, // 2.5 sec
+            disableOnInteraction: false, // user swipe ke baad bhi chalu rahega
+            pauseOnMouseEnter: true // hover pe pause
+          },
           breakpoints: {
             600: { slidesPerView: 2, spaceBetween: 14 },
             900: { slidesPerView: 3, spaceBetween: 16 },
