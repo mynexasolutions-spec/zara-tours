@@ -78,7 +78,7 @@
         <div class="contact-icon">&#10022;</div>
         <div>
           <div class="contact-label">Speciality</div>
-          <div class="contact-val">Complete Indian Destination Planner</div>
+          <div class="contact-val">Complete Indian Destination Tour Planner</div>
         </div>
       </div>
     </div>
@@ -117,21 +117,57 @@
             <option>Family Tour</option>
             <option>Couple Tour</option>
             <option>Group Tour</option>
-            <option>School/College</option>
+            <option>Hajj & Umrah Tour</option>
+            <option>School & College Tour</option>
           </select>
         </div>
         <div class="form-group">
-          <label>No. of Guests</label>
-          <input type="number" id="contact-guests" placeholder="e.g. 4" min="1">
+          <label>Adults</label>
+          <input type="number" id="contact-adults" placeholder="e.g. 2" min="1">
         </div>
+        <div class="form-group">
+          <label>Children</label>
+          <select id="contact-child">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4+">4+</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Child Age Range</label>
+        <select id="contact-age">
+          <option value="N/A">N/A</option>
+          <option value="0-2 Years">0-2 Years</option>
+          <option value="2-5 Years">2-5 Years</option>
+          <option value="5-12 Years">5-12 Years</option>
+        </select>
       </div>
       <div class="form-group">
         <label>Message / Requirements</label>
         <textarea id="contact-msg" placeholder="Tell us your travel dates, budget or any special requirements..."></textarea>
       </div>
-      <button class="form-submit" onclick="handleSubmit(this)">Send Enquiry</button>
+      <button class="form-submit" onclick="handleSubmit()">Send Enquiry</button>
     </div>
   </div>
 </section>
+
+<script>
+  function handleSubmit() {
+    const name = document.getElementById('contact-name').value;
+    const phone = document.getElementById('contact-phone').value;
+    const dest = document.getElementById('contact-dest').value;
+    const type = document.getElementById('contact-type').value;
+    const adults = document.getElementById('contact-adults').value;
+    const child = document.getElementById('contact-child').value;
+    const age = document.getElementById('contact-age').value;
+    const msg = document.getElementById('contact-msg').value;
+
+    const message = `Hi Zara Tours! I want to enquire about a tour.\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Destination:* ${dest}\n*Tour Type:* ${type}\n*Adults:* ${adults}\n*Children:* ${child}\n*Child Age Range:* ${age}\n*Message:* ${msg}`;
+    window.open(`https://wa.me/919982965965?text=${encodeURIComponent(message)}`, '_blank');
+  }
+</script>
 
 {% endblock %}

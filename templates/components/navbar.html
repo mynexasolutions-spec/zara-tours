@@ -3,8 +3,8 @@
   <a href="{{ url_for('home') }}" class="logo">
     <img src="{{ url_for('static', filename='images/zara-logo.jpeg') }}" alt="Zara Tour Logo" class="logo-img">
     <div class="logo-text">
-      <span class="logo-name">Zara Tour N-Travels</span>
-      <span class="logo-tagline-nav">India</span>
+      <span class="logo-name">{% if request.endpoint == 'events' %}Zara Event Planner{% else %}Zara Tour N-Travels{% endif %}</span>
+      <span class="logo-tagline-nav">{% if request.endpoint == 'events' %}Expert Planning{% else %}India{% endif %}</span>
     </div>
   </a>
   <ul class="nav-links">
@@ -25,8 +25,8 @@
   <div class="mobile-menu-logo">
     <img src="{{ url_for('static', filename='images/zara-logo.jpeg') }}" alt="Zara Tour Logo" class="mobile-logo-img">
     <div>
-      <span class="mobile-logo-name">Zara Tour N-Travels</span>
-      <span class="mobile-logo-tagline">India</span>
+      <span class="mobile-logo-name">{% if request.endpoint == 'events' %}Zara Event Planner{% else %}Zara Tour N-Travels{% endif %}</span>
+      <span class="mobile-logo-tagline">{% if request.endpoint == 'events' %}Expert Planning{% else %}India{% endif %}</span>
     </div>
   </div>
   <a href="{{ url_for('home') }}" onclick="closeMenu()">Home</a>

@@ -19,7 +19,7 @@
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-badge">🇮🇳 Complete Indian Destination Planner</div>
+    <div class="hero-badge">🇮🇳 Complete Indian Destination Tour Planner</div>
     <h1 class="hero-title">Find Your<br>Perfect <span>Journey</span></h1>
     <p class="hero-hindi">हर सफर एक नई कहानी — ज़ारा टूर के साथ</p>
     <p class="hero-sub">Handcrafted tours across the most breathtaking destinations in India.<br>Unplug, explore, and
@@ -29,6 +29,8 @@
       <div class="pill"><span class="dot"></span> Family Tours</div>
       <div class="pill"><span class="dot"></span> Couple Tours</div>
       <div class="pill"><span class="dot"></span> Group Tours</div>
+      <div class="pill"><span class="dot"></span> Hajj & Umrah</div>
+      <div class="pill"><span class="dot"></span> School & College</div>
     </div>
     <div class="hero-btns">
       <a href="#packages" class="btn-primary">Explore Packages</a>
@@ -68,6 +70,8 @@
           <option value="Couple Tour">Couple Tour</option>
           <option value="Family Tour">Family Tour</option>
           <option value="Solo Trip">Solo Trip</option>
+          <option value="Hajj & Umrah">Hajj & Umrah</option>
+          <option value="School & College">School & College</option>
         </select>
       </div>
     </div>
@@ -88,10 +92,36 @@
       <div class="field-value">
         <span class="field-icon">🧑‍🤝‍🧑</span>
         <select id="book-guests" class="booking-select">
-          <option value="2 Adults">2 Adults</option>
+          <option value="1 Adult">1 Adult</option>
+          <option value="2 Adults" selected>2 Adults</option>
           <option value="4 Adults">4 Adults</option>
-          <option value="6 Adults" selected>6 Adults</option>
+          <option value="6 Adults">6 Adults</option>
           <option value="8+ Adults">8+ Adults</option>
+        </select>
+      </div>
+    </div>
+    <div class="booking-field">
+      <div class="field-label">Children</div>
+      <div class="field-value">
+        <span class="field-icon">👶</span>
+        <select id="book-child" class="booking-select">
+          <option value="No Children">No Children</option>
+          <option value="1 Child">1 Child</option>
+          <option value="2 Children">2 Children</option>
+          <option value="3 Children">3 Children</option>
+          <option value="4+ Children">4+ Children</option>
+        </select>
+      </div>
+    </div>
+    <div class="booking-field">
+      <div class="field-label">Child Age</div>
+      <div class="field-value">
+        <span class="field-icon">🎂</span>
+        <select id="book-age" class="booking-select">
+          <option value="N/A">N/A</option>
+          <option value="0-2 Years">0-2 Years</option>
+          <option value="2-5 Years">2-5 Years</option>
+          <option value="5-12 Years">5-12 Years</option>
         </select>
       </div>
     </div>
@@ -105,7 +135,9 @@
     const type = document.getElementById('book-type').value;
     const dur = document.getElementById('book-dur').value;
     const guests = document.getElementById('book-guests').value;
-    const message = `Hi Zara Tours! I'm interested in booking a stay.\n\n*Destination:* ${dest}\n*Tour Type:* ${type}\n*Duration:* ${dur}\n*Guests:* ${guests}\n\nPlease share the details!`;
+    const child = document.getElementById('book-child').value;
+    const age = document.getElementById('book-age').value;
+    const message = `Hi Zara Tours! I'm interested in booking a stay.\n\n*Destination:* ${dest}\n*Tour Type:* ${type}\n*Duration:* ${dur}\n*Adults:* ${guests}\n*Children:* ${child}\n*Child Age Range:* ${age}\n\nPlease share the details!`;
     window.open(`https://wa.me/919982965965?text=${encodeURIComponent(message)}`, '_blank');
   }
 </script>
@@ -168,6 +200,65 @@
       <div class="dest-overlay">
         <div class="dest-tag">West India</div>
         <div class="dest-name">Rajasthan</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOUR CATEGORIES -->
+<section id="categories" class="categories-section">
+  <div class="centered">
+    <div class="section-label reveal">Our Expertise</div>
+    <h2 class="section-title reveal reveal-delay-1">Specialized<br>Tour Categories</h2>
+    <p class="section-sub reveal reveal-delay-2">Tailored experiences for every pilgrim, student, solo explorer, and family.</p>
+  </div>
+  <div class="categories-grid">
+    <!-- Solo -->
+    <div class="cat-card reveal">
+      <img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=800" alt="Solo Tours">
+      <div class="cat-overlay">
+        <div class="cat-name">Solo Tours</div>
+        <a href="https://wa.me/919982965965?text=I'm interested in Solo Tours" class="cat-btn">Contact Now</a>
+      </div>
+    </div>
+    <!-- Family -->
+    <div class="cat-card reveal reveal-delay-1">
+      <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=800" alt="Family Tours">
+      <div class="cat-overlay">
+        <div class="cat-name">Family Tours</div>
+        <a href="https://wa.me/919982965965?text=I'm interested in Family Tours" class="cat-btn">Contact Now</a>
+      </div>
+    </div>
+    <!-- Couple -->
+    <div class="cat-card reveal reveal-delay-2">
+      <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=800" alt="Couple Tours">
+      <div class="cat-overlay">
+        <div class="cat-name">Couple Tours</div>
+        <a href="https://wa.me/919982965965?text=I'm interested in Couple Tours" class="cat-btn">Contact Now</a>
+      </div>
+    </div>
+    <!-- Group -->
+    <div class="cat-card reveal">
+      <img src="{{ url_for('static', filename='images/services/group-tours.jpg') }}" alt="Group Tours">
+      <div class="cat-overlay">
+        <div class="cat-name">Group Tours</div>
+        <a href="https://wa.me/919982965965?text=I'm interested in Group Tours" class="cat-btn">Contact Now</a>
+      </div>
+    </div>
+    <!-- Hajj & Umrah -->
+    <div class="cat-card reveal reveal-delay-1">
+      <img src="{{ url_for('static', filename='images/services/hajj-and-umrah.jpg') }}" alt="Hajj & Umrah">
+      <div class="cat-overlay">
+        <div class="cat-name">Hajj & Umrah</div>
+        <a href="https://wa.me/919982965965?text=I'm interested in Hajj and Umrah Tours" class="cat-btn">Contact Now</a>
+      </div>
+    </div>
+    <!-- School & College -->
+    <div class="cat-card reveal reveal-delay-2">
+      <img src="{{ url_for('static', filename='images/services/school-tours.jpg') }}" alt="School & College Tours">
+      <div class="cat-overlay">
+        <div class="cat-name">School & College</div>
+        <a href="https://wa.me/919982965965?text=I'm interested in School and College Tours" class="cat-btn">Contact Now</a>
       </div>
     </div>
   </div>
@@ -464,6 +555,10 @@
       <div class="svc-name">School & College Tours</div>
       <div class="svc-desc">Educational and adventure tours for students with a safety-first approach.</div>
     </div>
+    <div class="svc-card reveal">
+      <div class="svc-name">Hajj & Umrah Tours</div>
+      <div class="svc-desc">Spiritual journeys to Makkah and Madinah with end-to-end support and comfort.</div>
+    </div>
   </div>
 </section>
 
@@ -647,6 +742,55 @@
   </div>
 </section>
 
+<!-- REVIEWS -->
+<section id="reviews" class="reviews-section">
+  <div class="centered">
+    <div class="section-label reveal">Testimonials</div>
+    <h2 class="section-title reveal reveal-delay-1">What Our Travelers<br>Are Saying</h2>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card reveal">
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <p class="review-text">"Zara Tours made our Kashmir trip unforgettable. The planning was perfect and the stays were luxury!"</p>
+      <div class="review-author">
+        <div class="author-img">A</div>
+        <div>
+          <div class="contact-label">Amit Sharma</div>
+          <div class="contact-val" style="font-size: 0.7rem;">Verified Traveler</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card reveal reveal-delay-1">
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <p class="review-text">"Best price guarantee indeed! We compared many agencies but Zara's package was most value for money."</p>
+      <div class="review-author">
+        <div class="author-img">P</div>
+        <div>
+          <div class="contact-label">Priya Verma</div>
+          <div class="contact-val" style="font-size: 0.7rem;">Verified Traveler</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card reveal reveal-delay-2">
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <p class="review-text">"Highly recommend for group tours. They handled 15 of us with ease and professional support."</p>
+      <div class="review-author">
+        <div class="author-img">R</div>
+        <div>
+          <div class="contact-label">Rajesh Gupta</div>
+          <div class="contact-val" style="font-size: 0.7rem;">Verified Traveler</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="review-btn-wrap reveal reveal-delay-3">
+    <a href="https://www.google.com/search?q=Zara+Tour+N+Travels+Reviews" target="_blank" class="google-review-btn">
+      <img src="https://www.gstatic.com/images/branding/product/1x/googleg_48dp.png" width="20" alt="Google">
+      Write a Google Review
+    </a>
+  </div>
+</section>
+
 <!-- END BANNER -->
 <div class="end-banner reveal">
   <img src="{{ url_for('static', filename='images/banner_end.png') }}" alt="Travel Banner">
@@ -657,6 +801,43 @@
     </a>
   </div>
 </div>
+
+<!-- FAQ SECTION -->
+<section id="faq" class="faq-section">
+  <div class="centered">
+    <div class="section-label reveal">Common Questions</div>
+    <h2 class="section-title reveal reveal-delay-1">Frequently Asked<br>Questions</h2>
+  </div>
+  <div class="faq-container">
+    <div class="faq-item reveal">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        How do I book a tour package?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        You can book directly via our "Book Now" buttons which connect you to our travel experts on WhatsApp, or by filling the contact form.
+      </div>
+    </div>
+    <div class="faq-item reveal reveal-delay-1">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        What is included in the tour price?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Typically, our packages include accommodation, private transport, and sightseeing. Specific inclusions vary by package.
+      </div>
+    </div>
+    <div class="faq-item reveal reveal-delay-2">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        Can I customize my itinerary?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Yes! We specialize in handcrafted tours. Tell us your preferences and we'll create a perfect plan for you.
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- CONTACT -->
 <section id="contact" class="contact-section">
@@ -694,7 +875,7 @@
         <div class="contact-icon">&#10022;</div>
         <div>
           <div class="contact-label">Speciality</div>
-          <div class="contact-val">Complete Indian Destination Planner</div>
+          <div class="contact-val">Complete Indian Destination Tour Planner</div>
         </div>
       </div>
     </div>
@@ -703,16 +884,16 @@
       <div class="form-row">
         <div class="form-group">
           <label>Your Name</label>
-          <input type="text" placeholder="e.g. Rahul Sharma">
+          <input type="text" id="form-name" placeholder="e.g. Rahul Sharma">
         </div>
         <div class="form-group">
           <label>Phone Number</label>
-          <input type="tel" placeholder="+91 98765 43210">
+          <input type="tel" id="form-phone" placeholder="+91 98765 43210">
         </div>
       </div>
       <div class="form-group">
         <label>Destination</label>
-        <select>
+        <select id="form-dest">
           <option>Select destination...</option>
           <option>Kashmir</option>
           <option>Ladakh</option>
@@ -728,25 +909,138 @@
       <div class="form-row">
         <div class="form-group">
           <label>Tour Type</label>
-          <select>
+          <select id="form-type">
             <option>Solo Tour</option>
             <option>Family Tour</option>
             <option>Couple Tour</option>
             <option>Group Tour</option>
-            <option>School/College</option>
+            <option>Hajj & Umrah Tour</option>
+            <option>School & College Tour</option>
           </select>
         </div>
         <div class="form-group">
-          <label>No. of Guests</label>
-          <input type="number" placeholder="e.g. 4" min="1">
+          <label>Adults</label>
+          <input type="number" id="form-adults" placeholder="e.g. 2" min="1">
+        </div>
+        <div class="form-group">
+          <label>Children</label>
+          <select id="form-child">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4+">4+</option>
+          </select>
         </div>
       </div>
       <div class="form-group">
+        <label>Child Age Range</label>
+        <select id="form-age">
+          <option value="N/A">N/A</option>
+          <option value="0-2 Years">0-2 Years</option>
+          <option value="2-5 Years">2-5 Years</option>
+          <option value="5-12 Years">5-12 Years</option>
+        </select>
+      </div>
+      <div class="form-group">
         <label>Message / Requirements</label>
-        <textarea placeholder="Tell us your travel dates, budget or any special requirements..."></textarea>
+        <textarea id="form-msg" placeholder="Tell us your travel dates, budget or any special requirements..."></textarea>
       </div>
       <button class="form-submit" onclick="handleSubmit(this)">Send Enquiry</button>
     </div>
   </div>
 </section>
+<!-- QUICK LINKS & VISITOR COUNTER -->
+<section id="links" class="quick-links-section">
+  <div class="centered">
+    <div class="section-label reveal">Resources</div>
+    <h2 class="section-title reveal reveal-delay-1">Helpful Links</h2>
+  </div>
+  <div class="links-grid reveal reveal-delay-2">
+    <a href="#about" class="link-btn">
+      <span class="icon">ℹ️</span>
+      <span class="text">About Us</span>
+    </a>
+    <a href="#faq" class="link-btn">
+      <span class="icon">❓</span>
+      <span class="text">F.A.Q</span>
+    </a>
+    <a href="#contact" class="link-btn">
+      <span class="icon">💬</span>
+      <span class="text">Feedback</span>
+    </a>
+    <a href="https://www.google.com/search?q=Zara+Tour+N+Travels+Reviews" target="_blank" class="link-btn">
+      <span class="icon">⭐</span>
+      <span class="text">Google Review</span>
+    </a>
+    <div class="link-btn counter-btn">
+      <span class="icon">📊</span>
+      <span class="text">Visitors: <span id="visit-count">0</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL MEDIA CARDS -->
+<section id="social" class="social-section">
+  <div class="centered">
+    <div class="section-label reveal">Community</div>
+    <h2 class="section-title reveal reveal-delay-1">Connect With Us</h2>
+  </div>
+  <div class="social-grid">
+    <!-- WhatsApp -->
+    <a href="https://wa.me/919982965965" target="_blank" class="social-card whatsapp reveal">
+      <div class="icon">💬</div>
+      <div class="name">WhatsApp</div>
+      <div class="handle">99829 65965</div>
+    </a>
+    <!-- Instagram -->
+    <a href="#" target="_blank" class="social-card instagram reveal reveal-delay-1">
+      <div class="icon">📸</div>
+      <div class="name">Instagram</div>
+      <div class="handle">@zaratours</div>
+    </a>
+    <!-- Facebook -->
+    <a href="#" target="_blank" class="social-card facebook reveal reveal-delay-2">
+      <div class="icon">👥</div>
+      <div class="name">Facebook</div>
+      <div class="handle">Zara Tours</div>
+    </a>
+    <!-- YouTube -->
+    <a href="#" target="_blank" class="social-card youtube reveal reveal-delay-3">
+      <div class="icon">🎥</div>
+      <div class="name">YouTube</div>
+      <div class="handle">Zara Travels</div>
+    </a>
+  </div>
+</section>
+
+<script>
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    item.classList.toggle('active');
+  }
+
+  function handleSubmit() {
+    const name = document.getElementById('form-name').value;
+    const phone = document.getElementById('form-phone').value;
+    const dest = document.getElementById('form-dest').value;
+    const type = document.getElementById('form-type').value;
+    const adults = document.getElementById('form-adults').value;
+    const child = document.getElementById('form-child').value;
+    const age = document.getElementById('form-age').value;
+    const msg = document.getElementById('form-msg').value;
+
+    const message = `Hi Zara Tours! I want to enquire about a tour.\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Destination:* ${dest}\n*Tour Type:* ${type}\n*Adults:* ${adults}\n*Children:* ${child}\n*Child Age Range:* ${age}\n*Message:* ${msg}`;
+    window.open(`https://wa.me/919982965965?text=${encodeURIComponent(message)}`, '_blank');
+  }
+
+  // Visitor Counter Logic
+  document.addEventListener('DOMContentLoaded', function() {
+    let count = localStorage.getItem('visitCount') || 1248;
+    count = parseInt(count) + 1;
+    localStorage.setItem('visitCount', count);
+    document.getElementById('visit-count').textContent = count.toLocaleString();
+  });
+</script>
+
 {% endblock %}
