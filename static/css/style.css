@@ -1973,10 +1973,11 @@ footer::before {
   }
 
   .shorts-item {
-    width: calc(45vw - 12px);
+    width: 85vw;
     aspect-ratio: 9/16;
     border-radius: 14px;
     flex-shrink: 0;
+    scroll-snap-align: start;
   }
 }
 
