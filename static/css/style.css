@@ -1537,6 +1537,8 @@ footer::before {
   text-decoration: none;
   font-size: 0.84rem;
   transition: all 0.25s;
+  word-break: break-all;
+  overflow-wrap: break-word;
 }
 
 .footer-links a:hover {
